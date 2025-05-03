@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Detalhes do Produto - Sweet Donut</title>
+    <style>
+      .product-image {
+        max-height: 400px;
+        object-fit: contain;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+      }
+      .product-image:hover {
+        transform: scale(1.05);
+      }
+      .product-details {
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+      .product-title {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 2rem;
+      }
+      .product-price {
+        font-size: 1.5rem;
+        color: #28a745;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .product-description {
+        margin: 20px 0;
+        line-height: 1.8;
+        color: #666;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .product-specs {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .spec-item {
+        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 6px;
+      }
+      .spec-label {
+        font-weight: bold;
+        color: #666;
+        min-width: 100px;
+      }
+      .spec-value {
+        color: #333;
+      }
+
+      /* Media Queries para responsividade */
+      @media (max-width: 768px) {
+        .product-image {
+          max-height: 300px;
+          padding: 15px;
+        }
+        .product-title {
+          font-size: 1.5rem;
+        }
+        .product-price {
+          font-size: 1.25rem;
+        }
+        .product-details {
+          padding: 20px;
+        }
+        .spec-item {
+          flex-direction: column;
+          gap: 5px;
+        }
+        .spec-label {
+          min-width: auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .product-image {
+          max-height: 250px;
+          padding: 10px;
+        }
+        .product-title {
+          font-size: 1.25rem;
+        }
+        .product-price {
+          font-size: 1.1rem;
+        }
+        .product-details {
+          padding: 15px;
+        }
+        .product-specs {
+          padding: 15px;
+        }
+      }
+
+      /* Animações */
+      .fade-in {
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-light p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="index.html">
+          <img src="./imagens/logo.png" alt="Logo Sweet Donut" class="logo" />
+        </a>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="quemSomos.html">Quem Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="contato.html">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="unidades.html">Unidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="cadastroProduto.html">Cadastrar Produto</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-dark cart-icon"
+                href="finalizarCompra.html"
+              >
+                🛒 Carrinho
+                <span class="cart-badge" id="cart-total">0</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <img id="productImage" src="" class="product-image w-100" alt="Imagem do Produto" />
+        </div>
+        <div class="col-md-6">
+          <div class="product-details">
+            <h1 id="productTitle" class="product-title"></h1>
+            <p id="productPrice" class="product-price"></p>
+            <p id="productDescription" class="product-description"></p>
+            
+            <div class="product-specs">
+              <h3>Especificações</h3>
+              <div class="spec-item">
+                <span class="spec-label">Condição:</span>
+                <span id="productCondition"></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Garantia:</span>
+                <span id="productWarranty"></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Localização:</span>
+                <span id="productLocation"></span>
+              </div>
+            </div>
+
+            <button class="btn btn-primary mt-4" onclick="addToCart()">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer style="background-color: #333333;" class="py-4">
+      <div class="container text-center">
+        <p style="color: black;">&copy; 2024 Sweet Donut. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Função para carregar os detalhes do produto
+      function loadProductDetails() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get('product');
+        
+        // Mapeamento de produtos e suas informações
+        const products = {
+          'Celular Samsung Galaxy S25 5G 512GB 12GB RAM': {
+            title: 'Smartphone Samsung Galaxy S21',
+            price: 'R$ 2.500,00',
+            description: 'Smartphone seminovo, em excelente estado, com 128GB de armazenamento. Inclui carregador original e capa protetora.',
+            condition: 'Seminovo',
+            warranty: '3 meses',
+            location: 'São Paulo, SP',
+            image: './imagens/Celular Samsung Galaxy S25 5G 512GB 12GB RAM.jpg'
+          },
+          'Notebook Gamer Acer Nitro V15 ANV15-51 7837 Intel Core i7': {
+            title: 'Notebook Dell Inspiron',
+            price: 'R$ 1.800,00',
+            description: 'Notebook usado, em bom estado, com processador i5 e 8GB de RAM. Ideal para trabalho e estudos.',
+            condition: 'Usado',
+            warranty: '1 mês',
+            location: 'Rio de Janeiro, RJ',
+            image: './imagens/Notebook Gamer Acer Nitro V15 ANV15-51 7837 Intel Core i7.jpg'
+          },
+          'Notebook Samsung Galaxy Book Go Snapdragon': {
+            title: 'Smart TV LG 50"',
+            price: 'R$ 1.500,00',
+            description: 'TV usada, em perfeito estado, com resolução 4K e sistema webOS. Inclui controle remoto original.',
+            condition: 'Usado',
+            warranty: '2 meses',
+            location: 'Belo Horizonte, MG',
+            image: './imagens/Notebook Samsung Galaxy Book Go Snapdragon.jpg'
+          },
+          'Secador de Filamento para Impressão 3D Creality Space Pi 110V': {
+            title: 'Câmera Canon EOS Rebel',
+            price: 'R$ 2.200,00',
+            description: 'Câmera DSLR seminova, com lente 18-55mm, em excelente estado. Inclui bolsa e cartão de memória.',
+            condition: 'Seminovo',
+            warranty: '3 meses',
+            location: 'Curitiba, PR',
+            image: './imagens/Secador de Filamento para Impressão 3D Creality Space Pi 110V.jpg'
+          },
+          'Smart LCD LED TV 42 AOC 42S5045 78G Full HD': {
+            title: 'Fone de Ouvido Sony WH-1000XM4',
+            price: 'R$ 1.200,00',
+            description: 'Fone de ouvido sem fio, novo, com cancelamento de ruído ativo. Inclui case e cabo USB.',
+            condition: 'Novo',
+            warranty: '6 meses',
+            location: 'Porto Alegre, RS',
+            image: './imagens/Smart LCD LED TV 42 AOC 42S5045 78G Full HD.jpg'
+          },
+          'Smart TV 50 4K LG Ultra HD 50UT8050': {
+            title: 'PlayStation 5',
+            price: 'R$ 3.500,00',
+            description: 'Console seminovo, com controle e 2 jogos, em perfeito estado. Inclui todos os acessórios originais.',
+            condition: 'Seminovo',
+            warranty: '3 meses',
+            location: 'Salvador, BA',
+            image: './imagens/Smart TV 50 4K LG Ultra HD 50UT8050.jpg'
+          }
+        };
+
+        if (productName && products[productName]) {
+          const product = products[productName];
+          document.getElementById('productImage').src = product.image;
+          document.getElementById('productTitle').textContent = product.title;
+          document.getElementById('productPrice').textContent = product.price;
+          document.getElementById('productDescription').textContent = product.description;
+          document.getElementById('productCondition').textContent = product.condition;
+          document.getElementById('productWarranty').textContent = product.warranty;
+          document.getElementById('productLocation').textContent = product.location;
+        } else {
+          // Se o produto não for encontrado, redireciona para a página de produtos
+          window.location.href = 'produtos.html';
+        }
+      }
+
+      // Função para adicionar ao carrinho
+      function addToCart() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get('product');
+        const products = {
+          'Celular Samsung Galaxy S25 5G 512GB 12GB RAM': 2500.00,
+          'Notebook Gamer Acer Nitro V15 ANV15-51 7837 Intel Core i7': 1800.00,
+          'Notebook Samsung Galaxy Book Go Snapdragon': 1500.00,
+          'Secador de Filamento para Impressão 3D Creality Space Pi 110V': 2200.00,
+          'Smart LCD LED TV 42 AOC 42S5045 78G Full HD': 1200.00,
+          'Smart TV 50 4K LG Ultra HD 50UT8050': 3500.00
+        };
+
+        if (productName && products[productName]) {
+          let cartTotal = parseFloat(localStorage.getItem("cartTotal")) || 0;
+          let itemCount = parseInt(localStorage.getItem("itemCount")) || 0;
+
+          cartTotal += products[productName];
+          itemCount++;
+
+          localStorage.setItem("cartTotal", cartTotal);
+          localStorage.setItem("itemCount", itemCount);
+
+          alert("Produto adicionado ao carrinho!");
+        }
+      }
+
+      // Carregar detalhes do produto quando a página carregar
+      window.onload = loadProductDetails;
+    </script>
+  </body>
+</html> 

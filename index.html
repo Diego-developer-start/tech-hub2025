@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Sweet Donut - A Loja dos Melhores Donuts</title>
+  </head>
+
+  <body>
+    <header class="p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="index.html">
+          <img src="./imagens/logo.png" alt="Logo Sweet Donut" class="logo" />
+        </a>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="quemSomos.html">Quem Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="contato.html">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="unidades.html">Unidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="cadastroProduto.html">Cadastrar Produto</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-dark cart-icon"
+                href="finalizarCompra.html"
+              >
+                🛒 Carrinho
+                <span class="cart-badge" id="cart-total">0</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Banner vai ficar aqui , ele ta responsivo por causa do bootstrap-->
+
+    <section class="carousel-container">
+      <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./imagens/Produto1.jpg"
+              class="d-block w-100"
+              alt="Produtos Eletrônicos"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Produtos Eletrônicos</h5>
+              <p>Encontre os melhores produtos novos e usados!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./imagens/Produto1.jpg"
+              class="d-block w-100"
+              alt="Produtos Novos"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Produtos Novos</h5>
+              <p>Produtos originais com garantia e procedência garantida.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./imagens/Produto1.jpg"
+              class="d-block w-100"
+              alt="Produtos Usados"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Produtos Usados</h5>
+              <p>Produtos seminovos em excelente estado e com ótimo custo-benefício.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./imagens/Produto1.jpg"
+              class="d-block w-100"
+              alt="Ofertas Especiais"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Ofertas Especiais</h5>
+              <p>Descontos imperdíveis em produtos novos e usados!</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#bannerCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#bannerCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="sobre-nos py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6">
+            <img
+              src="./imagens/logo.png"
+              alt="Imagem sobre nós"
+              class="img-fluid rounded"
+            />
+          </div>
+          <div class="col-md-6">
+            <h2 class="mb-3">Quem Somos</h2>
+            <p>
+              Somos especialistas em produtos eletrônicos novos e usados. Oferecemos
+              produtos de qualidade com garantia e procedência garantida, além de
+              excelentes opções de produtos seminovos com ótimo custo-benefício.
+            </p>
+            <a href="quemSomos.html" class="btn mt-3">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="produtos-destaque py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Nossos Destaques</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./imagens/Produto1.jpg"
+                class="card-img-top"
+                alt="Smartphones"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Smartphones</h5>
+                <p class="card-text">
+                  Celulares novos e seminovos das melhores marcas com garantia.
+                </p>
+                <a href="produtos.html" class="btn">Ver mais</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./imagens/Produto1.jpg"
+                class="card-img-top"
+                alt="Notebooks"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Notebooks</h5>
+                <p class="card-text">
+                  Notebooks novos e usados com garantia e procedência garantida.
+                </p>
+                <a href="produtos.html" class="btn">Ver mais</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="./imagens/Produto1.jpg"
+                class="card-img-top"
+                alt="Acessórios"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Acessórios</h5>
+                <p class="card-text">
+                  Acessórios originais e compatíveis para seus dispositivos.
+                </p>
+                <a href="produtos.html" class="btn">Ver mais</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="background-color: #333333;" class="py-4">
+      <div class="container text-center">
+        <p style="color: black;">&copy; 2024 Sweet Donut. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+      <button class="chat-button" onclick="toggleChat()">
+        <i class="fas fa-robot"></i>
+      </button>
+      <div class="chat-container" id="chatContainer" style="display: none;">
+        <div class="chat-header">
+          <h5>Assistente Virtual</h5>
+          <button class="close-chat" onclick="toggleChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="message bot">
+            <p>Olá! Sou seu assistente virtual. Como posso ajudar com produtos eletrônicos hoje?</p>
+          </div>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="userInput" placeholder="Digite sua mensagem...">
+          <button onclick="sendMessage()">Enviar</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const botResponses = {
+        'ola': 'Olá! Como posso ajudar você com produtos eletrônicos hoje?',
+        'oi': 'Olá! Como posso ajudar você com produtos eletrônicos hoje?',
+        'bom dia': 'Bom dia! Como posso ajudar você com produtos eletrônicos hoje?',
+        'boa tarde': 'Boa tarde! Como posso ajudar você com produtos eletrônicos hoje?',
+        'boa noite': 'Boa noite! Como posso ajudar você com produtos eletrônicos hoje?',
+        'produtos': 'Temos uma variedade de produtos eletrônicos novos e usados, incluindo smartphones, notebooks e acessórios. Você pode ver todos os produtos na página de produtos.',
+        'preços': 'Nossos preços variam de acordo com o produto e sua condição (novo ou usado). Você pode ver os preços específicos na página de produtos.',
+        'garantia': 'Todos os nossos produtos novos vêm com garantia de fábrica. Produtos usados também têm garantia, mas o período pode variar. Você pode verificar os detalhes da garantia na página do produto específico.',
+        'entrega': 'Oferecemos entrega para todo o Brasil. O prazo e valor do frete são calculados no momento da compra.',
+        'pagamento': 'Aceitamos várias formas de pagamento: cartões de crédito, débito, PIX e boleto bancário.',
+        'devolução': 'Temos uma política de devolução de 7 dias para produtos novos e usados, desde que estejam nas mesmas condições em que foram entregues.',
+        'ajuda': 'Posso ajudar com informações sobre produtos, preços, garantias, formas de pagamento e entrega. O que você gostaria de saber?',
+        'contato': 'Você pode entrar em contato conosco através do telefone (11) 1234-5678, email contato@loja.com ou pelo formulário na página de contato.',
+        'horario': 'Estamos abertos de segunda a sexta, das 9h às 18h, e aos sábados das 9h às 13h.',
+        'localizacao': 'Nossa loja física fica na Av. Paulista, 1234, Centro, SP. Você também pode comprar pelo site.',
+        'smartphone': 'Temos smartphones novos e usados das melhores marcas como Samsung, Apple, Motorola e Xiaomi. Todos com garantia e procedência garantida.',
+        'notebook': 'Oferecemos notebooks novos e usados de diversas marcas como Dell, HP, Lenovo e Acer. Todos passam por testes rigorosos antes da venda.',
+        'acessorio': 'Temos diversos acessórios como capas, carregadores, fones de ouvido e muito mais. Todos originais ou compatíveis de alta qualidade.',
+        'usado': 'Nossos produtos usados passam por uma rigorosa avaliação técnica e são vendidos com garantia. Todos estão em excelente estado de conservação.',
+        'novo': 'Nossos produtos novos são originais, com garantia de fábrica e procedência garantida. Temos as melhores marcas do mercado.',
+        'default': 'Desculpe, não entendi sua pergunta. Você pode tentar perguntar sobre produtos, preços, garantia, entrega ou formas de pagamento.'
+      };
+
+      function toggleChat() {
+        const chatContainer = document.getElementById('chatContainer');
+        chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
+      }
+
+      function getBotResponse(userMessage) {
+        const message = userMessage.toLowerCase();
+        
+        // Verifica palavras-chave nas respostas
+        for (const [key, response] of Object.entries(botResponses)) {
+          if (message.includes(key)) {
+            return response;
+          }
+        }
+        
+        return botResponses.default;
+      }
+
+      function sendMessage() {
+        const userInput = document.getElementById('userInput');
+        const chatMessages = document.getElementById('chatMessages');
+        
+        if (userInput.value.trim() !== '') {
+          const userMessage = userInput.value;
+          
+          // Adiciona mensagem do usuário
+          chatMessages.innerHTML += `
+            <div class="message user">
+              <p>${userMessage}</p>
+            </div>
+          `;
+
+          // Simula digitação do bot
+          chatMessages.innerHTML += `
+            <div class="message bot typing">
+              <p>Digitando...</p>
+            </div>
+          `;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+
+          // Remove a mensagem "Digitando..." e adiciona a resposta
+          setTimeout(() => {
+            const typingMessage = chatMessages.querySelector('.typing');
+            if (typingMessage) {
+              typingMessage.remove();
+            }
+            
+            const botResponse = getBotResponse(userMessage);
+            chatMessages.innerHTML += `
+              <div class="message bot">
+                <p>${botResponse}</p>
+              </div>
+            `;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }, 1000);
+
+          userInput.value = '';
+        }
+      }
+
+      // Enviar mensagem ao pressionar Enter
+      document.getElementById('userInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+    </script>
+  </body>
+</html>

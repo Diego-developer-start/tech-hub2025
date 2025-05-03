@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="produtos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Produtos - Sweet Donut</title>
+    <style>
+      .cart-icon {
+        position: relative;
+        cursor: pointer;
+      }
+      .cart-badge {
+        position: absolute;
+        margin-left: 70px;
+        background: linear-gradient(135deg, #6B8DD6, #4A6FC1);
+        color: white;
+        border-radius: 50%;
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+      .cart-total-value {
+        font-weight: bold;
+        color: #000;
+      }
+      .card-img-top {
+        height: 200px;
+        object-fit: contain;
+        padding: 10px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+      }
+      .card-img-top:hover {
+        transform: none;
+      }
+      .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+      }
+      .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-text {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="index.html">
+          <img src="./imagens/logo.png" alt="Logo Sweet Donut" class="logo" />
+        </a>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="quemSomos.html">Quem Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="produtos.html">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="contato.html">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="unidades.html">Unidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="cadastroProduto.html">Cadastrar Produto</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-dark cart-icon"
+                href="finalizarCompra.html"
+              >
+                🛒 Carrinho
+                <span class="cart-badge" id="cart-total">0</span>
+                <span class="cart-total-value" id="cart-value">R$ 0,00</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Produtos Novos e Usados</h1>
+      <div class="row">
+        <!-- Smartphone -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              src="./imagens/Celular Samsung Galaxy S25 5G 512GB 12GB RAM.jpg"
+              class="card-img-top"
+              alt="Smartphone"
+              onclick="window.location.href='detalhesProduto.html?product=Celular Samsung Galaxy S25 5G 512GB 12GB RAM'"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Smartphone Samsung Galaxy S21</h5>
+              <p class="card-text">
+                Smartphone seminovo, em excelente estado, com 128GB de armazenamento.
+              </p>
+              <p class="price" data-price="2500.00">R$ 2.500,00</p>
+              <button class="btn add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+        <!-- Notebook -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              src="./imagens/Notebook Gamer Acer Nitro V15 ANV15-51 7837 Intel Core i7.jpg"
+              class="card-img-top"
+              alt="Notebook"
+              onclick="window.location.href='detalhesProduto.html?product=Notebook Gamer Acer Nitro V15 ANV15-51 7837 Intel Core i7'"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Notebook Dell Inspiron</h5>
+              <p class="card-text">
+                Notebook usado, em bom estado, com processador i5 e 8GB de RAM.
+              </p>
+              <p class="price" data-price="1800.00">R$ 1.800,00</p>
+              <button class="btn add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+        <!-- TV -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              src="./imagens/Notebook Samsung Galaxy Book Go Snapdragon.jpg"
+              class="card-img-top"
+              alt="TV"
+              onclick="window.location.href='detalhesProduto.html?product=Notebook Samsung Galaxy Book Go Snapdragon'"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Smart TV LG 50"</h5>
+              <p class="card-text">
+                TV usada, em perfeito estado, com resolução 4K e sistema webOS.
+              </p>
+              <p class="price" data-price="1500.00">R$ 1.500,00</p>
+              <button class="btn add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+        <!-- Câmera -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              src="./imagens/Secador de Filamento para Impressão 3D Creality Space Pi 110V.jpg"
+              class="card-img-top"
+              alt="Câmera"
+              onclick="window.location.href='detalhesProduto.html?product=Secador de Filamento para Impressão 3D Creality Space Pi 110V'"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Câmera Canon EOS Rebel</h5>
+              <p class="card-text">
+                Câmera DSLR seminova, com lente 18-55mm, em excelente estado.
+              </p>
+              <p class="price" data-price="2200.00">R$ 2.200,00</p>
+              <button class="btn add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+        <!-- Fone de Ouvido -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              src="./imagens/Smart LCD LED TV 42 AOC 42S5045 78G Full HD.jpg"
+              class="card-img-top"
+              alt="Fone de Ouvido"
+              onclick="window.location.href='detalhesProduto.html?product=Smart LCD LED TV 42 AOC 42S5045 78G Full HD'"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Fone de Ouvido Sony WH-1000XM4</h5>
+              <p class="card-text">
+                Fone de ouvido sem fio, novo, com cancelamento de ruído ativo.
+              </p>
+              <p class="price" data-price="1200.00">R$ 1.200,00</p>
+              <button class="btn add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+        <!-- Console -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              src="./imagens/Smart TV 50 4K LG Ultra HD 50UT8050.jpg"
+              class="card-img-top"
+              alt="Console de Videogame"
+              onclick="window.location.href='detalhesProduto.html?product=Smart TV 50 4K LG Ultra HD 50UT8050'"
+            />
+            <div class="card-body">
+              <h5 class="card-title">PlayStation 5</h5>
+              <p class="card-text">
+                Console seminovo, com controle e 2 jogos, em perfeito estado.
+              </p>
+              <p class="price" data-price="3500.00">R$ 3.500,00</p>
+              <button class="btn add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer style="background-color: #333333;" class="py-4">
+      <div class="container text-center">
+        <p style="color: black;">&copy; 2024 Sweet Donut. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Variáveis de carrinho
+      let cartTotal = parseFloat(localStorage.getItem("cartTotal")) || 0;
+      let itemCount = parseInt(localStorage.getItem("itemCount")) || 0;
+
+      // Exibir valores salvos ao carregar a página
+      document.getElementById("cart-total").textContent = itemCount;
+      document.getElementById(
+        "cart-value"
+      ).textContent = `R$ ${cartTotal.toFixed(2)}`;
+
+      // Função para adicionar ao carrinho
+      function addToCart(price) {
+        if (!isNaN(price)) {
+          // Verifica se o preço é um número válido
+          cartTotal += price;
+          itemCount++;
+
+          // Atualiza os elementos na página
+          document.getElementById("cart-total").textContent = itemCount;
+          document.getElementById(
+            "cart-value"
+          ).textContent = `R$ ${cartTotal.toFixed(2)}`;
+
+          // Salva no localStorage
+          localStorage.setItem("cartTotal", cartTotal);
+          localStorage.setItem("itemCount", itemCount);
+        } else {
+          console.error("Preço inválido detectado:", price);
+        }
+      }
+
+      // Evento para cada botão de "Adicionar ao Carrinho"
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", function () {
+          const price = parseFloat(
+            this.previousElementSibling.getAttribute("data-price")
+          );
+          addToCart(price);
+          alert("Produto adicionado ao carrinho!");
+        });
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+      <button class="chat-button" onclick="toggleChat()">
+        <i class="fas fa-robot"></i>
+      </button>
+      <div class="chat-container" id="chatContainer" style="display: none;">
+        <div class="chat-header">
+          <h5>Assistente Virtual</h5>
+          <button class="close-chat" onclick="toggleChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="message bot">
+            <p>Olá! Sou seu assistente virtual. Posso ajudar você a encontrar produtos eletrônicos, cadastrar novos produtos ou responder suas dúvidas. Como posso ajudar?</p>
+          </div>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="userInput" placeholder="Digite sua mensagem...">
+          <button onclick="sendMessage()">Enviar</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const botResponses = {
+        'ola': 'Olá! Sou seu assistente virtual. Posso ajudar você a encontrar produtos eletrônicos, cadastrar novos produtos ou responder suas dúvidas. Como posso ajudar?',
+        'oi': 'Olá! Sou seu assistente virtual. Posso ajudar você a encontrar produtos eletrônicos, cadastrar novos produtos ou responder suas dúvidas. Como posso ajudar?',
+        'bom dia': 'Bom dia! Como posso ajudar você com produtos eletrônicos hoje?',
+        'boa tarde': 'Boa tarde! Como posso ajudar você com produtos eletrônicos hoje?',
+        'boa noite': 'Boa noite! Como posso ajudar você com produtos eletrônicos hoje?',
+        'cadastrar': 'Claro! Vou te ajudar a cadastrar um novo produto. Por favor, me informe:\n1. Nome do produto\n2. Categoria (smartphone, notebook, etc)\n3. Condição (novo ou usado)\n4. Preço\n5. Descrição breve',
+        'produtos': 'Temos uma variedade de produtos eletrônicos novos e usados. Você pode:\n- Ver todos os produtos nesta página\n- Filtrar por categoria\n- Buscar produtos específicos\n- Cadastrar novos produtos\nO que você gostaria de fazer?',
+        'preços': 'Nossos preços variam de acordo com o produto e sua condição. Você pode:\n- Ver preços na página de produtos\n- Comparar preços entre produtos\n- Receber alertas de promoções\nGostaria de saber o preço de algum produto específico?',
+        'garantia': 'Todos os nossos produtos têm garantia:\n- Produtos novos: garantia de fábrica\n- Produtos usados: garantia de 3 meses\n- Acessórios: garantia de 1 mês\nPosso te ajudar com mais detalhes sobre a garantia de algum produto específico?',
+        'entrega': 'Oferecemos várias opções de entrega:\n- Entrega expressa (1-2 dias úteis)\n- Entrega padrão (3-5 dias úteis)\n- Retirada na loja\nO frete é calculado no momento da compra.',
+        'pagamento': 'Aceitamos várias formas de pagamento:\n- Cartões de crédito (até 12x)\n- Cartão de débito\n- PIX (5% de desconto)\n- Boleto bancário',
+        'devolução': 'Nossa política de devolução:\n- 7 dias para produtos novos\n- 3 dias para produtos usados\n- Produto deve estar na embalagem original\n- Todos os acessórios devem ser devolvidos',
+        'ajuda': 'Posso ajudar você com:\n- Encontrar produtos\n- Cadastrar novos produtos\n- Informações sobre preços\n- Detalhes de garantia\n- Formas de pagamento\n- Política de devolução\nO que você gostaria de saber?',
+        'contato': 'Você pode entrar em contato conosco:\n- Telefone: (11) 1234-5678\n- Email: contato@loja.com\n- WhatsApp: (11) 98765-4321\n- Formulário na página de contato',
+        'horario': 'Nossos horários de atendimento:\n- Segunda a Sexta: 9h às 18h\n- Sábados: 9h às 13h\n- Domingos e feriados: fechado',
+        'localizacao': 'Nossa loja física:\n- Endereço: Av. Paulista, 1234, Centro, SP\n- Estacionamento gratuito\n- Metrô próximo (Estação Paulista)',
+        'smartphone': 'Temos smartphones de várias marcas:\n- Samsung Galaxy S e A series\n- iPhone (novos e usados)\n- Motorola Edge e G series\n- Xiaomi Redmi e Mi series\nTodos com garantia e procedência garantida.',
+        'notebook': 'Oferecemos notebooks:\n- Dell Inspiron e XPS\n- HP Pavilion e Envy\n- Lenovo ThinkPad e IdeaPad\n- Acer Nitro e Swift\nTodos testados e com garantia.',
+        'acessorio': 'Temos diversos acessórios:\n- Capas e películas\n- Carregadores originais\n- Fones de ouvido\n- Power banks\n- Cabos e adaptadores',
+        'usado': 'Nossos produtos usados:\n- Passam por testes rigorosos\n- Garantia de 3 meses\n- Estado de conservação excelente\n- Preços mais acessíveis\n- Procedência garantida',
+        'novo': 'Produtos novos:\n- Originais de fábrica\n- Garantia completa\n- Embalagem original\n- Acessórios inclusos\n- Melhores marcas do mercado',
+        'default': 'Desculpe, não entendi sua pergunta. Você pode:\n- Perguntar sobre produtos\n- Cadastrar um novo produto\n- Saber sobre preços\n- Informações de garantia\n- Formas de pagamento\n- Política de devolução'
+      };
+
+      let productRegistration = {
+        isRegistering: false,
+        currentStep: 0,
+        productData: {}
+      };
+
+      function toggleChat() {
+        const chatContainer = document.getElementById('chatContainer');
+        chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
+      }
+
+      function getBotResponse(userMessage) {
+        const message = userMessage.toLowerCase();
+        
+        if (productRegistration.isRegistering) {
+          return handleProductRegistration(message);
+        }
+        
+        // Verifica palavras-chave nas respostas
+        for (const [key, response] of Object.entries(botResponses)) {
+          if (message.includes(key)) {
+            return response;
+          }
+        }
+        
+        return botResponses.default;
+      }
+
+      function handleProductRegistration(message) {
+        const steps = [
+          'Por favor, me informe o nome do produto:',
+          'Qual a categoria do produto? (smartphone, notebook, etc):',
+          'O produto é novo ou usado?:',
+          'Qual o preço do produto?:',
+          'Por favor, forneça uma breve descrição do produto:'
+        ];
+
+        if (productRegistration.currentStep < steps.length) {
+          productRegistration.productData[productRegistration.currentStep] = message;
+          productRegistration.currentStep++;
+
+          if (productRegistration.currentStep < steps.length) {
+            return steps[productRegistration.currentStep];
+          } else {
+            // Finaliza o cadastro
+            const productInfo = `
+              Produto cadastrado com sucesso!\n
+              Nome: ${productRegistration.productData[0]}\n
+              Categoria: ${productRegistration.productData[1]}\n
+              Condição: ${productRegistration.productData[2]}\n
+              Preço: ${productRegistration.productData[3]}\n
+              Descrição: ${productRegistration.productData[4]}\n
+              \nDeseja cadastrar outro produto?
+            `;
+            
+            // Reseta o estado de cadastro
+            productRegistration.isRegistering = false;
+            productRegistration.currentStep = 0;
+            productRegistration.productData = {};
+            
+            return productInfo;
+          }
+        }
+      }
+
+      function sendMessage() {
+        const userInput = document.getElementById('userInput');
+        const chatMessages = document.getElementById('chatMessages');
+        
+        if (userInput.value.trim() !== '') {
+          const userMessage = userInput.value;
+          
+          // Adiciona mensagem do usuário
+          chatMessages.innerHTML += `
+            <div class="message user">
+              <p>${userMessage}</p>
+            </div>
+          `;
+
+          // Simula digitação do bot
+          chatMessages.innerHTML += `
+            <div class="message bot typing">
+              <p>Digitando...</p>
+            </div>
+          `;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+
+          // Remove a mensagem "Digitando..." e adiciona a resposta
+          setTimeout(() => {
+            const typingMessage = chatMessages.querySelector('.typing');
+            if (typingMessage) {
+              typingMessage.remove();
+            }
+            
+            const botResponse = getBotResponse(userMessage);
+            chatMessages.innerHTML += `
+              <div class="message bot">
+                <p>${botResponse}</p>
+              </div>
+            `;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }, 1000);
+
+          userInput.value = '';
+        }
+      }
+
+      // Enviar mensagem ao pressionar Enter
+      document.getElementById('userInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+    </script>
+  </body>
+</html>
